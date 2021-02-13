@@ -28,6 +28,16 @@ func main() {
 		os.Exit(0)
 	}
 
+	if !cmdExists("ifconfig") {
+		lg.error("Need command: ifconfig")
+		exit(0)
+	}
+
+	if !cmdExists("route") {
+		lg.error("Need command: route")
+		exit(0)
+	}
+
 	lg.setLevel("error")
 
 	for {
